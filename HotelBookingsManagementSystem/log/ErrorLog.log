@@ -2383,3 +2383,353 @@ org.postgresql.util.PSQLException: ERROR: null value in column "user_id" of rela
 30-Sep-2022 21:13:07 INFO - Stopping ProtocolHandler ["http-nio-8080"]
 30-Sep-2022 21:13:07 INFO - Destroying ProtocolHandler ["http-nio-8080"]
 30-Sep-2022 21:13:07 INFO - Closing JPA EntityManagerFactory for persistence unit 'default'
+01-Oct-2022 09:43:37 INFO - HV000001: Hibernate Validator 6.2.5.Final
+01-Oct-2022 09:43:39 INFO - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+01-Oct-2022 09:43:39 INFO - Finished Spring Data repository scanning in 113 ms. Found 1 JPA repository interfaces.
+01-Oct-2022 09:43:39 INFO - Tomcat initialized with port(s): 8080 (http)
+01-Oct-2022 09:43:39 INFO - Initializing ProtocolHandler ["http-nio-8080"]
+01-Oct-2022 09:43:39 INFO - Starting service [Tomcat]
+01-Oct-2022 09:43:39 INFO - Starting Servlet engine: [Apache Tomcat/9.0.65]
+01-Oct-2022 09:43:39 INFO - Initializing Spring embedded WebApplicationContext
+01-Oct-2022 09:43:39 INFO - Root WebApplicationContext: initialization completed in 1849 ms
+01-Oct-2022 09:43:40 INFO - HHH000204: Processing PersistenceUnitInfo [name: default]
+01-Oct-2022 09:43:40 INFO - HHH000412: Hibernate ORM core version 5.6.11.Final
+01-Oct-2022 09:43:40 INFO - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+01-Oct-2022 09:43:40 INFO - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+01-Oct-2022 09:43:41 INFO - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+01-Oct-2022 09:43:41 INFO - Initialized JPA EntityManagerFactory for persistence unit 'default'
+01-Oct-2022 09:43:41 WARN - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+01-Oct-2022 09:43:42 INFO - Starting ProtocolHandler ["http-nio-8080"]
+01-Oct-2022 09:43:42 INFO - Tomcat started on port(s): 8080 (http) with context path ''
+01-Oct-2022 09:47:59 INFO - Initializing Spring DispatcherServlet 'dispatcherServlet'
+01-Oct-2022 09:47:59 INFO - Initializing Servlet 'dispatcherServlet'
+01-Oct-2022 09:47:59 INFO - Completed initialization in 1 ms
+01-Oct-2022 10:06:18 ERROR - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is javax.validation.ValidationException: HV000032: Unable to initialize org.hibernate.validator.internal.constraintvalidators.bv.PatternValidator.] with root cause
+java.util.regex.PatternSyntaxException: Unclosed counted closure near index 66
+^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&-+=()])(?=\\S+$).{8, 20}$
+                                                                  ^
+	at java.util.regex.Pattern.error(Pattern.java:2038) ~[?:?]
+	at java.util.regex.Pattern.closure(Pattern.java:3311) ~[?:?]
+	at java.util.regex.Pattern.sequence(Pattern.java:2224) ~[?:?]
+	at java.util.regex.Pattern.expr(Pattern.java:2079) ~[?:?]
+	at java.util.regex.Pattern.compile(Pattern.java:1793) ~[?:?]
+	at java.util.regex.Pattern.<init>(Pattern.java:1440) ~[?:?]
+	at java.util.regex.Pattern.compile(Pattern.java:1105) ~[?:?]
+	at org.hibernate.validator.internal.constraintvalidators.bv.PatternValidator.initialize(PatternValidator.java:40) ~[hibernate-validator-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.validator.internal.constraintvalidators.bv.PatternValidator.initialize(PatternValidator.java:24) ~[hibernate-validator-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.validator.internal.engine.constraintvalidation.AbstractConstraintValidatorManagerImpl.initializeValidator(AbstractConstraintValidatorManagerImpl.java:142) ~[hibernate-validator-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.validator.internal.engine.constraintvalidation.AbstractConstraintValidatorManagerImpl.createAndInitializeValidator(AbstractConstraintValidatorManagerImpl.java:90) ~[hibernate-validator-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.validator.internal.engine.constraintvalidation.ConstraintValidatorManagerImpl.getInitializedValidator(ConstraintValidatorManagerImpl.java:117) ~[hibernate-validator-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.validator.internal.engine.constraintvalidation.ConstraintTree.getInitializedConstraintValidator(ConstraintTree.java:136) ~[hibernate-validator-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.validator.internal.engine.constraintvalidation.SimpleConstraintTree.validateConstraints(SimpleConstraintTree.java:54) ~[hibernate-validator-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.validator.internal.engine.constraintvalidation.ConstraintTree.validateConstraints(ConstraintTree.java:75) ~[hibernate-validator-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.validator.internal.metadata.core.MetaConstraint.doValidateConstraint(MetaConstraint.java:130) ~[hibernate-validator-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.validator.internal.metadata.core.MetaConstraint.validateConstraint(MetaConstraint.java:123) ~[hibernate-validator-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.validator.internal.engine.ValidatorImpl.validateMetaConstraint(ValidatorImpl.java:555) ~[hibernate-validator-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.validator.internal.engine.ValidatorImpl.validateConstraintsForSingleDefaultGroupElement(ValidatorImpl.java:518) ~[hibernate-validator-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.validator.internal.engine.ValidatorImpl.validateConstraintsForDefaultGroup(ValidatorImpl.java:488) ~[hibernate-validator-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.validator.internal.engine.ValidatorImpl.validateConstraintsForCurrentGroup(ValidatorImpl.java:450) ~[hibernate-validator-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.validator.internal.engine.ValidatorImpl.validateInContext(ValidatorImpl.java:400) ~[hibernate-validator-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.validator.internal.engine.ValidatorImpl.validate(ValidatorImpl.java:172) ~[hibernate-validator-6.2.5.Final.jar:6.2.5.Final]
+	at org.springframework.validation.beanvalidation.SpringValidatorAdapter.validate(SpringValidatorAdapter.java:109) ~[spring-context-5.3.23.jar:5.3.23]
+	at org.springframework.boot.autoconfigure.validation.ValidatorAdapter.validate(ValidatorAdapter.java:66) ~[spring-boot-autoconfigure-2.7.4.jar:2.7.4]
+	at org.springframework.validation.DataBinder.validate(DataBinder.java:933) ~[spring-context-5.3.23.jar:5.3.23]
+	at org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodArgumentResolver.validateIfApplicable(AbstractMessageConverterMethodArgumentResolver.java:250) ~[spring-webmvc-5.3.23.jar:5.3.23]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor.resolveArgument(RequestResponseBodyMethodProcessor.java:139) ~[spring-webmvc-5.3.23.jar:5.3.23]
+	at org.springframework.web.method.support.HandlerMethodArgumentResolverComposite.resolveArgument(HandlerMethodArgumentResolverComposite.java:122) ~[spring-web-5.3.23.jar:5.3.23]
+	at org.springframework.web.method.support.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:179) ~[spring-web-5.3.23.jar:5.3.23]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:146) ~[spring-web-5.3.23.jar:5.3.23]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117) ~[spring-webmvc-5.3.23.jar:5.3.23]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895) ~[spring-webmvc-5.3.23.jar:5.3.23]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) ~[spring-webmvc-5.3.23.jar:5.3.23]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.3.23.jar:5.3.23]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1071) ~[spring-webmvc-5.3.23.jar:5.3.23]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:964) ~[spring-webmvc-5.3.23.jar:5.3.23]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.23.jar:5.3.23]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909) ~[spring-webmvc-5.3.23.jar:5.3.23]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:681) ~[tomcat-embed-core-9.0.65.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.23.jar:5.3.23]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764) ~[tomcat-embed-core-9.0.65.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.23.jar:5.3.23]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.23.jar:5.3.23]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.23.jar:5.3.23]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.23.jar:5.3.23]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.23.jar:5.3.23]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.23.jar:5.3.23]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:890) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1789) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at java.lang.Thread.run(Thread.java:833) ~[?:?]
+01-Oct-2022 10:09:17 ERROR - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is javax.validation.ValidationException: HV000032: Unable to initialize org.hibernate.validator.internal.constraintvalidators.bv.PatternValidator.] with root cause
+java.util.regex.PatternSyntaxException: Unclosed counted closure near index 66
+^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&-+=()])(?=\\S+$).{8, 20}$
+                                                                  ^
+	at java.util.regex.Pattern.error(Pattern.java:2038) ~[?:?]
+	at java.util.regex.Pattern.closure(Pattern.java:3311) ~[?:?]
+	at java.util.regex.Pattern.sequence(Pattern.java:2224) ~[?:?]
+	at java.util.regex.Pattern.expr(Pattern.java:2079) ~[?:?]
+	at java.util.regex.Pattern.compile(Pattern.java:1793) ~[?:?]
+	at java.util.regex.Pattern.<init>(Pattern.java:1440) ~[?:?]
+	at java.util.regex.Pattern.compile(Pattern.java:1105) ~[?:?]
+	at org.hibernate.validator.internal.constraintvalidators.bv.PatternValidator.initialize(PatternValidator.java:40) ~[hibernate-validator-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.validator.internal.constraintvalidators.bv.PatternValidator.initialize(PatternValidator.java:24) ~[hibernate-validator-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.validator.internal.engine.constraintvalidation.AbstractConstraintValidatorManagerImpl.initializeValidator(AbstractConstraintValidatorManagerImpl.java:142) ~[hibernate-validator-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.validator.internal.engine.constraintvalidation.AbstractConstraintValidatorManagerImpl.createAndInitializeValidator(AbstractConstraintValidatorManagerImpl.java:90) ~[hibernate-validator-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.validator.internal.engine.constraintvalidation.ConstraintValidatorManagerImpl.getInitializedValidator(ConstraintValidatorManagerImpl.java:117) ~[hibernate-validator-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.validator.internal.engine.constraintvalidation.ConstraintTree.getInitializedConstraintValidator(ConstraintTree.java:136) ~[hibernate-validator-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.validator.internal.engine.constraintvalidation.SimpleConstraintTree.validateConstraints(SimpleConstraintTree.java:54) ~[hibernate-validator-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.validator.internal.engine.constraintvalidation.ConstraintTree.validateConstraints(ConstraintTree.java:75) ~[hibernate-validator-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.validator.internal.metadata.core.MetaConstraint.doValidateConstraint(MetaConstraint.java:130) ~[hibernate-validator-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.validator.internal.metadata.core.MetaConstraint.validateConstraint(MetaConstraint.java:123) ~[hibernate-validator-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.validator.internal.engine.ValidatorImpl.validateMetaConstraint(ValidatorImpl.java:555) ~[hibernate-validator-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.validator.internal.engine.ValidatorImpl.validateConstraintsForSingleDefaultGroupElement(ValidatorImpl.java:518) ~[hibernate-validator-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.validator.internal.engine.ValidatorImpl.validateConstraintsForDefaultGroup(ValidatorImpl.java:488) ~[hibernate-validator-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.validator.internal.engine.ValidatorImpl.validateConstraintsForCurrentGroup(ValidatorImpl.java:450) ~[hibernate-validator-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.validator.internal.engine.ValidatorImpl.validateInContext(ValidatorImpl.java:400) ~[hibernate-validator-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.validator.internal.engine.ValidatorImpl.validate(ValidatorImpl.java:172) ~[hibernate-validator-6.2.5.Final.jar:6.2.5.Final]
+	at org.springframework.validation.beanvalidation.SpringValidatorAdapter.validate(SpringValidatorAdapter.java:109) ~[spring-context-5.3.23.jar:5.3.23]
+	at org.springframework.boot.autoconfigure.validation.ValidatorAdapter.validate(ValidatorAdapter.java:66) ~[spring-boot-autoconfigure-2.7.4.jar:2.7.4]
+	at org.springframework.validation.DataBinder.validate(DataBinder.java:933) ~[spring-context-5.3.23.jar:5.3.23]
+	at org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodArgumentResolver.validateIfApplicable(AbstractMessageConverterMethodArgumentResolver.java:250) ~[spring-webmvc-5.3.23.jar:5.3.23]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor.resolveArgument(RequestResponseBodyMethodProcessor.java:139) ~[spring-webmvc-5.3.23.jar:5.3.23]
+	at org.springframework.web.method.support.HandlerMethodArgumentResolverComposite.resolveArgument(HandlerMethodArgumentResolverComposite.java:122) ~[spring-web-5.3.23.jar:5.3.23]
+	at org.springframework.web.method.support.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:179) ~[spring-web-5.3.23.jar:5.3.23]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:146) ~[spring-web-5.3.23.jar:5.3.23]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117) ~[spring-webmvc-5.3.23.jar:5.3.23]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895) ~[spring-webmvc-5.3.23.jar:5.3.23]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) ~[spring-webmvc-5.3.23.jar:5.3.23]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.3.23.jar:5.3.23]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1071) ~[spring-webmvc-5.3.23.jar:5.3.23]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:964) ~[spring-webmvc-5.3.23.jar:5.3.23]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.23.jar:5.3.23]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909) ~[spring-webmvc-5.3.23.jar:5.3.23]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:681) ~[tomcat-embed-core-9.0.65.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.23.jar:5.3.23]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764) ~[tomcat-embed-core-9.0.65.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.23.jar:5.3.23]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.23.jar:5.3.23]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.23.jar:5.3.23]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.23.jar:5.3.23]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.23.jar:5.3.23]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.23.jar:5.3.23]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:890) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1789) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at java.lang.Thread.run(Thread.java:833) ~[?:?]
+01-Oct-2022 10:09:49 INFO - Application shutdown requested.
+01-Oct-2022 10:09:49 INFO - Pausing ProtocolHandler ["http-nio-8080"]
+01-Oct-2022 10:09:49 INFO - Stopping service [Tomcat]
+01-Oct-2022 10:09:49 INFO - Destroying Spring FrameworkServlet 'dispatcherServlet'
+01-Oct-2022 10:09:49 INFO - Stopping ProtocolHandler ["http-nio-8080"]
+01-Oct-2022 10:09:49 INFO - Destroying ProtocolHandler ["http-nio-8080"]
+01-Oct-2022 10:09:49 INFO - Closing JPA EntityManagerFactory for persistence unit 'default'
+01-Oct-2022 10:09:52 INFO - HV000001: Hibernate Validator 6.2.5.Final
+01-Oct-2022 10:09:54 INFO - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+01-Oct-2022 10:09:54 INFO - Finished Spring Data repository scanning in 166 ms. Found 1 JPA repository interfaces.
+01-Oct-2022 10:09:55 INFO - Tomcat initialized with port(s): 8080 (http)
+01-Oct-2022 10:09:55 INFO - Initializing ProtocolHandler ["http-nio-8080"]
+01-Oct-2022 10:09:55 INFO - Starting service [Tomcat]
+01-Oct-2022 10:09:55 INFO - Starting Servlet engine: [Apache Tomcat/9.0.65]
+01-Oct-2022 10:09:55 INFO - Initializing Spring embedded WebApplicationContext
+01-Oct-2022 10:09:55 INFO - Root WebApplicationContext: initialization completed in 2703 ms
+01-Oct-2022 10:09:55 INFO - HHH000204: Processing PersistenceUnitInfo [name: default]
+01-Oct-2022 10:09:55 INFO - HHH000412: Hibernate ORM core version 5.6.11.Final
+01-Oct-2022 10:09:56 INFO - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+01-Oct-2022 10:09:56 INFO - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+01-Oct-2022 10:09:57 INFO - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+01-Oct-2022 10:09:57 INFO - Initialized JPA EntityManagerFactory for persistence unit 'default'
+01-Oct-2022 10:09:58 WARN - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+01-Oct-2022 10:09:59 INFO - Starting ProtocolHandler ["http-nio-8080"]
+01-Oct-2022 10:09:59 INFO - Tomcat started on port(s): 8080 (http) with context path ''
+01-Oct-2022 10:10:03 INFO - Initializing Spring DispatcherServlet 'dispatcherServlet'
+01-Oct-2022 10:10:03 INFO - Initializing Servlet 'dispatcherServlet'
+01-Oct-2022 10:10:03 INFO - Completed initialization in 4 ms
+01-Oct-2022 10:10:03 WARN - Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public org.springframework.http.ResponseEntity<com.entity.User> com.controller.UserController.addUser(com.entity.User): [Field error in object 'user' on field 'password': rejected value [Gowtham08@]; codes [Pattern.user.password,Pattern.password,Pattern.java.lang.String,Pattern]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [user.password,password]; arguments []; default message [password],[Ljavax.validation.constraints.Pattern$Flag;@15fe1949,^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&-+=()])(?=\\S+$).{8,20}$]; default message [must match "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&-+=()])(?=\\S+$).{8,20}$"]] ]
+01-Oct-2022 10:11:34 INFO - Application shutdown requested.
+01-Oct-2022 10:11:34 INFO - Pausing ProtocolHandler ["http-nio-8080"]
+01-Oct-2022 10:11:34 INFO - Stopping service [Tomcat]
+01-Oct-2022 10:11:34 INFO - Destroying Spring FrameworkServlet 'dispatcherServlet'
+01-Oct-2022 10:11:34 INFO - Stopping ProtocolHandler ["http-nio-8080"]
+01-Oct-2022 10:11:34 INFO - Destroying ProtocolHandler ["http-nio-8080"]
+01-Oct-2022 10:11:34 INFO - Closing JPA EntityManagerFactory for persistence unit 'default'
+01-Oct-2022 10:11:37 INFO - HV000001: Hibernate Validator 6.2.5.Final
+01-Oct-2022 10:11:39 INFO - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+01-Oct-2022 10:11:39 INFO - Finished Spring Data repository scanning in 160 ms. Found 1 JPA repository interfaces.
+01-Oct-2022 10:11:39 INFO - Tomcat initialized with port(s): 8080 (http)
+01-Oct-2022 10:11:39 INFO - Initializing ProtocolHandler ["http-nio-8080"]
+01-Oct-2022 10:11:39 INFO - Starting service [Tomcat]
+01-Oct-2022 10:11:39 INFO - Starting Servlet engine: [Apache Tomcat/9.0.65]
+01-Oct-2022 10:11:40 INFO - Initializing Spring embedded WebApplicationContext
+01-Oct-2022 10:11:40 INFO - Root WebApplicationContext: initialization completed in 2632 ms
+01-Oct-2022 10:11:40 INFO - HHH000204: Processing PersistenceUnitInfo [name: default]
+01-Oct-2022 10:11:40 INFO - HHH000412: Hibernate ORM core version 5.6.11.Final
+01-Oct-2022 10:11:40 INFO - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+01-Oct-2022 10:11:41 INFO - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+01-Oct-2022 10:11:42 INFO - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+01-Oct-2022 10:11:42 INFO - Initialized JPA EntityManagerFactory for persistence unit 'default'
+01-Oct-2022 10:11:43 WARN - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+01-Oct-2022 10:11:43 INFO - Starting ProtocolHandler ["http-nio-8080"]
+01-Oct-2022 10:11:43 INFO - Tomcat started on port(s): 8080 (http) with context path ''
+01-Oct-2022 10:11:48 INFO - Initializing Spring DispatcherServlet 'dispatcherServlet'
+01-Oct-2022 10:11:48 INFO - Initializing Servlet 'dispatcherServlet'
+01-Oct-2022 10:11:48 INFO - Completed initialization in 4 ms
+01-Oct-2022 10:12:49 WARN - Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public org.springframework.http.ResponseEntity<com.entity.User> com.controller.UserController.addUser(com.entity.User): [Field error in object 'user' on field 'password': rejected value [dghsuysajn]; codes [Pattern.user.password,Pattern.password,Pattern.java.lang.String,Pattern]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [user.password,password]; arguments []; default message [password],[Ljavax.validation.constraints.Pattern$Flag;@239e39a0,^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$]; default message [must match "^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$"]] ]
+01-Oct-2022 10:18:00 INFO - Application shutdown requested.
+01-Oct-2022 10:18:00 INFO - Pausing ProtocolHandler ["http-nio-8080"]
+01-Oct-2022 10:18:00 INFO - Stopping service [Tomcat]
+01-Oct-2022 10:18:00 INFO - Destroying Spring FrameworkServlet 'dispatcherServlet'
+01-Oct-2022 10:18:00 INFO - Stopping ProtocolHandler ["http-nio-8080"]
+01-Oct-2022 10:18:00 INFO - Destroying ProtocolHandler ["http-nio-8080"]
+01-Oct-2022 10:18:00 INFO - Closing JPA EntityManagerFactory for persistence unit 'default'
+01-Oct-2022 10:18:02 INFO - HV000001: Hibernate Validator 6.2.5.Final
+01-Oct-2022 10:18:03 INFO - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+01-Oct-2022 10:18:03 INFO - Finished Spring Data repository scanning in 85 ms. Found 1 JPA repository interfaces.
+01-Oct-2022 10:18:03 INFO - Tomcat initialized with port(s): 8080 (http)
+01-Oct-2022 10:18:03 INFO - Initializing ProtocolHandler ["http-nio-8080"]
+01-Oct-2022 10:18:03 INFO - Starting service [Tomcat]
+01-Oct-2022 10:18:03 INFO - Starting Servlet engine: [Apache Tomcat/9.0.65]
+01-Oct-2022 10:18:03 INFO - Initializing Spring embedded WebApplicationContext
+01-Oct-2022 10:18:03 INFO - Root WebApplicationContext: initialization completed in 1377 ms
+01-Oct-2022 10:18:03 INFO - HHH000204: Processing PersistenceUnitInfo [name: default]
+01-Oct-2022 10:18:03 INFO - HHH000412: Hibernate ORM core version 5.6.11.Final
+01-Oct-2022 10:18:04 INFO - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+01-Oct-2022 10:18:04 INFO - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+01-Oct-2022 10:18:04 INFO - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+01-Oct-2022 10:18:04 INFO - Initialized JPA EntityManagerFactory for persistence unit 'default'
+01-Oct-2022 10:18:05 WARN - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+01-Oct-2022 10:18:05 INFO - Starting ProtocolHandler ["http-nio-8080"]
+01-Oct-2022 10:18:05 INFO - Tomcat started on port(s): 8080 (http) with context path ''
+01-Oct-2022 10:18:11 INFO - Initializing Spring DispatcherServlet 'dispatcherServlet'
+01-Oct-2022 10:18:11 INFO - Initializing Servlet 'dispatcherServlet'
+01-Oct-2022 10:18:11 INFO - Completed initialization in 1 ms
+01-Oct-2022 10:18:11 WARN - Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public org.springframework.http.ResponseEntity<com.entity.User> com.controller.UserController.addUser(com.entity.User): [Field error in object 'user' on field 'mobile': rejected value [8643628913678]; codes [Pattern.user.mobile,Pattern.mobile,Pattern.java.lang.String,Pattern]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [user.mobile,mobile]; arguments []; default message [mobile],[Ljavax.validation.constraints.Pattern$Flag;@17e63ae4,^(\+\d{1,3}[- ]?)?\d{10}$]; default message [must match "^(\+\d{1,3}[- ]?)?\d{10}$"]] ]
+01-Oct-2022 10:18:38 WARN - Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public org.springframework.http.ResponseEntity<com.entity.User> com.controller.UserController.addUser(com.entity.User): [Field error in object 'user' on field 'mobile': rejected value [-8643628913]; codes [Pattern.user.mobile,Pattern.mobile,Pattern.java.lang.String,Pattern]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [user.mobile,mobile]; arguments []; default message [mobile],[Ljavax.validation.constraints.Pattern$Flag;@17e63ae4,^(\+\d{1,3}[- ]?)?\d{10}$]; default message [must match "^(\+\d{1,3}[- ]?)?\d{10}$"]] ]
+01-Oct-2022 10:21:37 INFO - Application shutdown requested.
+01-Oct-2022 10:21:37 INFO - Pausing ProtocolHandler ["http-nio-8080"]
+01-Oct-2022 10:21:37 INFO - Stopping service [Tomcat]
+01-Oct-2022 10:21:37 INFO - Destroying Spring FrameworkServlet 'dispatcherServlet'
+01-Oct-2022 10:21:37 INFO - Stopping ProtocolHandler ["http-nio-8080"]
+01-Oct-2022 10:21:37 INFO - Destroying ProtocolHandler ["http-nio-8080"]
+01-Oct-2022 10:21:37 INFO - Closing JPA EntityManagerFactory for persistence unit 'default'
+01-Oct-2022 10:21:39 INFO - HV000001: Hibernate Validator 6.2.5.Final
+01-Oct-2022 10:21:40 INFO - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+01-Oct-2022 10:21:40 INFO - Finished Spring Data repository scanning in 81 ms. Found 1 JPA repository interfaces.
+01-Oct-2022 10:21:41 INFO - Tomcat initialized with port(s): 8080 (http)
+01-Oct-2022 10:21:41 INFO - Initializing ProtocolHandler ["http-nio-8080"]
+01-Oct-2022 10:21:41 INFO - Starting service [Tomcat]
+01-Oct-2022 10:21:41 INFO - Starting Servlet engine: [Apache Tomcat/9.0.65]
+01-Oct-2022 10:21:41 INFO - Initializing Spring embedded WebApplicationContext
+01-Oct-2022 10:21:41 INFO - Root WebApplicationContext: initialization completed in 1431 ms
+01-Oct-2022 10:21:41 INFO - HHH000204: Processing PersistenceUnitInfo [name: default]
+01-Oct-2022 10:21:41 INFO - HHH000412: Hibernate ORM core version 5.6.11.Final
+01-Oct-2022 10:21:41 INFO - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+01-Oct-2022 10:21:41 INFO - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+01-Oct-2022 10:21:42 INFO - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+01-Oct-2022 10:21:42 INFO - Initialized JPA EntityManagerFactory for persistence unit 'default'
+01-Oct-2022 10:21:42 WARN - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+01-Oct-2022 10:21:43 INFO - Starting ProtocolHandler ["http-nio-8080"]
+01-Oct-2022 10:21:43 INFO - Tomcat started on port(s): 8080 (http) with context path ''
+01-Oct-2022 10:21:52 INFO - Initializing Spring DispatcherServlet 'dispatcherServlet'
+01-Oct-2022 10:21:52 INFO - Initializing Servlet 'dispatcherServlet'
+01-Oct-2022 10:21:52 INFO - Completed initialization in 1 ms
+01-Oct-2022 10:21:52 WARN - Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public org.springframework.http.ResponseEntity<com.entity.User> com.controller.UserController.addUser(com.entity.User): [Field error in object 'user' on field 'password': rejected value [Msd]; codes [Pattern.user.password,Pattern.password,Pattern.java.lang.String,Pattern]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [user.password,password]; arguments []; default message [password],[Ljavax.validation.constraints.Pattern$Flag;@5a25ad88,^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$]; default message [password must contain atleast:/n one digit/n one uppercase /n one lowercase/n one symbol ]] ]
+01-Oct-2022 10:22:37 INFO - Application shutdown requested.
+01-Oct-2022 10:22:37 INFO - Pausing ProtocolHandler ["http-nio-8080"]
+01-Oct-2022 10:22:37 INFO - Stopping service [Tomcat]
+01-Oct-2022 10:22:37 INFO - Destroying Spring FrameworkServlet 'dispatcherServlet'
+01-Oct-2022 10:22:37 INFO - Stopping ProtocolHandler ["http-nio-8080"]
+01-Oct-2022 10:22:37 INFO - Destroying ProtocolHandler ["http-nio-8080"]
+01-Oct-2022 10:22:37 INFO - Closing JPA EntityManagerFactory for persistence unit 'default'
+01-Oct-2022 10:22:39 INFO - HV000001: Hibernate Validator 6.2.5.Final
+01-Oct-2022 10:22:39 INFO - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+01-Oct-2022 10:22:40 INFO - Finished Spring Data repository scanning in 104 ms. Found 1 JPA repository interfaces.
+01-Oct-2022 10:22:40 INFO - Tomcat initialized with port(s): 8080 (http)
+01-Oct-2022 10:22:40 INFO - Initializing ProtocolHandler ["http-nio-8080"]
+01-Oct-2022 10:22:40 INFO - Starting service [Tomcat]
+01-Oct-2022 10:22:40 INFO - Starting Servlet engine: [Apache Tomcat/9.0.65]
+01-Oct-2022 10:22:40 INFO - Initializing Spring embedded WebApplicationContext
+01-Oct-2022 10:22:40 INFO - Root WebApplicationContext: initialization completed in 1497 ms
+01-Oct-2022 10:22:40 INFO - HHH000204: Processing PersistenceUnitInfo [name: default]
+01-Oct-2022 10:22:40 INFO - HHH000412: Hibernate ORM core version 5.6.11.Final
+01-Oct-2022 10:22:40 INFO - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+01-Oct-2022 10:22:41 INFO - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+01-Oct-2022 10:22:41 INFO - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+01-Oct-2022 10:22:41 INFO - Initialized JPA EntityManagerFactory for persistence unit 'default'
+01-Oct-2022 10:22:42 WARN - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+01-Oct-2022 10:22:42 INFO - Starting ProtocolHandler ["http-nio-8080"]
+01-Oct-2022 10:22:42 INFO - Tomcat started on port(s): 8080 (http) with context path ''
+01-Oct-2022 10:22:45 INFO - Initializing Spring DispatcherServlet 'dispatcherServlet'
+01-Oct-2022 10:22:45 INFO - Initializing Servlet 'dispatcherServlet'
+01-Oct-2022 10:22:45 INFO - Completed initialization in 1 ms
+01-Oct-2022 10:22:45 WARN - Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public org.springframework.http.ResponseEntity<com.entity.User> com.controller.UserController.addUser(com.entity.User): [Field error in object 'user' on field 'password': rejected value [Msd]; codes [Pattern.user.password,Pattern.password,Pattern.java.lang.String,Pattern]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [user.password,password]; arguments []; default message [password],[Ljavax.validation.constraints.Pattern$Flag;@46564a4f,^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$]; default message [password must contain atleast:<EOL> one digit/n one uppercase /n one lowercase/n one symbol ]] ]
+01-Oct-2022 10:23:32 INFO - Application shutdown requested.
+01-Oct-2022 10:23:32 INFO - Pausing ProtocolHandler ["http-nio-8080"]
+01-Oct-2022 10:23:32 INFO - Stopping service [Tomcat]
+01-Oct-2022 10:23:32 INFO - Destroying Spring FrameworkServlet 'dispatcherServlet'
+01-Oct-2022 10:23:32 INFO - Stopping ProtocolHandler ["http-nio-8080"]
+01-Oct-2022 10:23:32 INFO - Destroying ProtocolHandler ["http-nio-8080"]
+01-Oct-2022 10:23:32 INFO - Closing JPA EntityManagerFactory for persistence unit 'default'
+01-Oct-2022 10:23:34 INFO - HV000001: Hibernate Validator 6.2.5.Final
+01-Oct-2022 10:23:35 INFO - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+01-Oct-2022 10:23:35 INFO - Finished Spring Data repository scanning in 97 ms. Found 1 JPA repository interfaces.
+01-Oct-2022 10:23:35 INFO - Tomcat initialized with port(s): 8080 (http)
+01-Oct-2022 10:23:35 INFO - Initializing ProtocolHandler ["http-nio-8080"]
+01-Oct-2022 10:23:35 INFO - Starting service [Tomcat]
+01-Oct-2022 10:23:35 INFO - Starting Servlet engine: [Apache Tomcat/9.0.65]
+01-Oct-2022 10:23:35 INFO - Initializing Spring embedded WebApplicationContext
+01-Oct-2022 10:23:35 INFO - Root WebApplicationContext: initialization completed in 1416 ms
+01-Oct-2022 10:23:36 INFO - HHH000204: Processing PersistenceUnitInfo [name: default]
+01-Oct-2022 10:23:36 INFO - HHH000412: Hibernate ORM core version 5.6.11.Final
+01-Oct-2022 10:23:36 INFO - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+01-Oct-2022 10:23:36 INFO - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+01-Oct-2022 10:23:36 INFO - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+01-Oct-2022 10:23:36 INFO - Initialized JPA EntityManagerFactory for persistence unit 'default'
+01-Oct-2022 10:23:37 WARN - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+01-Oct-2022 10:23:37 INFO - Starting ProtocolHandler ["http-nio-8080"]
+01-Oct-2022 10:23:37 INFO - Tomcat started on port(s): 8080 (http) with context path ''

@@ -7,6 +7,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Pattern;
 
 
 @Entity
@@ -18,11 +19,11 @@ public class User {
 	private String userName;
 	@Email
 	private String email;
-	@NotBlank(message="Password is mandatory")
+	@Pattern(regexp = "^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$",message = "password must contain atleast one digit,one uppercase,one lowercase and one symbol ")
 	private String password;
 	@NotBlank(message="Role is mandatory")
 	private String role;
-	@NotBlank(message="Mobile Number is mandatory")
+	@Pattern(regexp = "^(\\+\\d{1,3}[- ]?)?\\d{10}$",message = "Mobile number is not proper")
 	private String mobile;
 	@NotBlank(message="Address is mandatory")
 	private String address;

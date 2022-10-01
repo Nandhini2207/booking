@@ -2733,3 +2733,13 @@ java.util.regex.PatternSyntaxException: Unclosed counted closure near index 66
 01-Oct-2022 10:23:37 WARN - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
 01-Oct-2022 10:23:37 INFO - Starting ProtocolHandler ["http-nio-8080"]
 01-Oct-2022 10:23:37 INFO - Tomcat started on port(s): 8080 (http) with context path ''
+01-Oct-2022 10:29:25 INFO - Initializing Spring DispatcherServlet 'dispatcherServlet'
+01-Oct-2022 10:29:25 INFO - Initializing Servlet 'dispatcherServlet'
+01-Oct-2022 10:29:25 INFO - Completed initialization in 0 ms
+01-Oct-2022 10:59:40 INFO - Application shutdown requested.
+01-Oct-2022 10:59:40 INFO - Pausing ProtocolHandler ["http-nio-8080"]
+01-Oct-2022 10:59:40 INFO - Stopping service [Tomcat]
+01-Oct-2022 10:59:40 INFO - Destroying Spring FrameworkServlet 'dispatcherServlet'
+01-Oct-2022 10:59:40 INFO - Stopping ProtocolHandler ["http-nio-8080"]
+01-Oct-2022 10:59:40 INFO - Destroying ProtocolHandler ["http-nio-8080"]
+01-Oct-2022 10:59:40 INFO - Closing JPA EntityManagerFactory for persistence unit 'default'
